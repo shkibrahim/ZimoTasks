@@ -23,6 +23,7 @@
     "react-native-change-icon": "^4.0.0",
     "react-native-contacts": "^5.2.3",
     "react-native-gesture-handler": "^2.12.1",
+    "react-native-image-crop-picker": "^0.40.0",
     "react-native-pager-view": "^6.2.0",
     "react-native-progress": "^5.0.0",
     "react-native-qrcode-scanner": "^1.5.5",
