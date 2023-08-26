@@ -7,15 +7,16 @@ import {VidReq} from '../Context/Api';
 import { StorageKeys } from "../Data/StorageKeys";
 import AsyncStorage from '@react-native-async-storage/async-storage';
  
-const Task4 =  () => {
+const Task4 =  ({navigation}) => {
   const videoRef = useRef(null);
   const [controlsVisible, setControlsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // State to track video loading
-  const navigation = useNavigation();
+
   const [Data1, setData1] = useState([]);
 
   const toggleControls = async () => {
+    VidReq();
     const Data = await AsyncStorage.getItem(StorageKeys.VidData);
     
     if (Data) {
@@ -114,7 +115,9 @@ const Task4 =  () => {
       />
     </View>
 
-
+<TouchableOpacity onPress={toggleControls} style={{alignSelf:'center'}}>
+    <Text> Refresh</Text>
+</TouchableOpacity>
 
      
     </View>

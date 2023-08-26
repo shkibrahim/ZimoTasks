@@ -12,6 +12,9 @@ import Task2 from './Screens/Task2';
 import Task5 from './Screens/Task5';
 import Task1 from './Screens/Task1';
 import Task4 from './Screens/Task4';
+import Task3 from './Screens/Task3';
+import Task6 from './Screens/Task6';
+import Main from './Screens/Main';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 const Drawer = createDrawerNavigator();
@@ -22,13 +25,15 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Task5" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="Main" screenOptions={{ headerShown: false }}>
       
          <Stack.Screen name="Task1" component={Task1} />
+         <Stack.Screen name="Main" component={Main} />
          <Stack.Screen name="Task2" component={Task2} />
-         {/* <Stack.Screen name="Task3" component={Task3} /> */}
+         <Stack.Screen name="Task3" component={Task3} />
          <Stack.Screen name="Task4" component={Task4} />
          <Stack.Screen name="Task5" component={Task5} />
+         <Stack.Screen name="Task6" component={Task6} />
        
      
       </Stack.Navigator>

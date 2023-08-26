@@ -4,12 +4,12 @@ import Video from "react-native-video";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 
-const Task2 = () => {
+const Task2 = ({navigation}) => {
   const videoRef = useRef(null);
   const [controlsVisible, setControlsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // State to track video loading
-  const navigation = useNavigation();
+
 
   const toggleControls = () => {
     setControlsVisible(!controlsVisible);

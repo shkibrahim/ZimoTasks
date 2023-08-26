@@ -42,11 +42,11 @@ const Task5 =  (navigation) => {
   const renderImage = ({ item, index }) => {
     const isThirdImage = (index + 1) % 6 === 3; // Third image in each set of 6
     const isSixthImage = (index + 1) % 6 === 0; // Sixth image in each set of 6
-  
+    const isLastItem = index === SelectedImages.length - 1;
     const imageStyle = {
-      width: isThirdImage || isSixthImage ? "100%" : '50%',
+        width: isThirdImage || (isSixthImage && !isLastItem) ? "100%" : '50%',
       height: 200,
-      resizeMode: "cover",
+    //   resizeMode: "cover",
       margin: 5,
     
     
@@ -140,15 +140,16 @@ const Task5 =  (navigation) => {
     </TouchableOpacity>
         </View>
 
-      
+      <View style={{height:600}}>
         <FlatList
         data={SelectedImages}
         renderItem={renderImage}
         keyExtractor={(item) => item.path}
         numColumns={2}
+        
       />
 
-
+</View>
 
      
     </View>
